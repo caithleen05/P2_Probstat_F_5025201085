@@ -157,19 +157,6 @@ tsum.test(mean.x=3.64, s.x = 1.67, n.x = 19, mean.y =2.79 , s.y = 1.32, n.y = 27
 ![image](https://user-images.githubusercontent.com/70510279/170847031-6d2d82a4-dad1-4e70-b204-5782eb790bf7.png)
 
 
-#### 3c
-Lakukan Uji Statistik (df =2)
-
-Melakukan install library `mosaic`
-```
-install.packages("mosaic")
-library(mosaic)
-```
-
-```
-plotDist(dist='t', df=2, col="blue")
-```
-![image](https://user-images.githubusercontent.com/70510279/170845594-721682ce-705c-4423-b6e2-5d3ad48e10cf.png)
 
 #### 3d
 Nilai kritikal
@@ -303,24 +290,6 @@ qplot(x = Temp, y = Light, geom = "point", data = GTL) +
 ```
 ![image](https://user-images.githubusercontent.com/70510279/170851403-3b91fe4f-ab41-4b3e-8aca-066a27607971.png)
 
-#### 5b
-Lakukan uji ANOVA dua arah
-Langkah pertama adalah membuat variabel as factor sebagai ANOVA
-```
-GTL$Glass <- as.factor(GTL$Glass)
-GTL$Temp_Factor <- as.factor(GTL$Temp)
-str(GTL)
-```
-![image](https://user-images.githubusercontent.com/70510279/170851438-509ae870-a9a1-420e-adb9-3239f6a6dfb6.png)
-
-</br>
-
-Selanjutnya melakukan analisis of variance (aov) yaitu sebagai berikut 
-```
-anova <- aov(Light ~ Glass*Temp_Factor, data = GTL)
-summary(anova)
-```
-![image](https://user-images.githubusercontent.com/70510279/170851507-b318c577-8c71-4a3c-b391-1c406e364abb.png)
 
 #### 5c
 Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)
